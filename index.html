@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaxile Studio - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">
+                <i class="fas fa-gamepad mr-2"></i>Yaxile Studio
+            </h1>
+            <nav class="space-x-4">
+                <a href="login.html" class="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded-full text-sm transition">
+                    <i class="fas fa-sign-in-alt mr-1"></i>Login
+                </a>
+                <a href="signup.html" class="text-white hover:text-blue-200 transition">
+                    <i class="fas fa-user-plus mr-1"></i>Sign Up
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-2xl p-6">
+            <h2 class="text-3xl font-bold text-center mb-4">Welcome to Yaxile Studio!</h2>
+            <p class="text-gray-700 text-center mb-6">Join us for an exciting gaming adventure. Create your own games, play with friends, and earn rewards!</p>
+            <div class="flex justify-center space-x-4">
+                <a href="signup.html" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-3 px-6 rounded-lg hover:opacity-90 transition">
+                    Get Started
+                </a>
+                <a href="play-enhanced.html" class="bg-gray-300 text-gray-800 py-3 px-6 rounded-lg hover:bg-gray-400 transition">
+                    Play Now
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-8 w-full max-w-2xl">
+            <h3 class="text-2xl font-bold text-center mb-4">Featured Games</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h4 class="font-semibold text-gray-800">Space Adventure</h4>
+                    <p class="text-gray-600">Join the ultimate space exploration game!</p>
+                    <a href="play.html" class="text-blue-600 hover:underline">Play Now</a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h4 class="font-semibold text-gray-800">Dragon Quest</h4>
+                    <p class="text-gray-600">Embark on a thrilling quest to defeat dragons!</p>
+                    <a href="play.html" class="text-blue-600 hover:underline">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2023 Yaxile Studio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
