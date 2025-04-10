@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaxile Studio - Create Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .tool-item {
+            transition: all 0.2s ease;
+            cursor: grab;
+        }
+        .tool-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .tool-item:active {
+            cursor: grabbing;
+        }
+        .design-area {
+            background-image: 
+                linear-gradient(rgba(243, 244, 246, 0.7) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(243, 244, 246, 0.7) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-color: white;
+        }
+        .template-card {
+            transition: all 0.3s ease;
+        }
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">
+                <i class="fas fa-gamepad mr-2"></i>Yaxile Studio
+            </h1>
+            <nav class="space-x-4">
+                <a href="dashboard.html" class="text-white hover:text-blue-200 transition">
+                    <i class="fas fa-tachometer-alt mr-1"></i>Dashboard
+                </a>
+                <a href="play-enhanced.html" class="text-white hover:text-blue-200 transition">
+                    <i class="fas fa-play mr-1"></i>Play
+                </a>
+                <a href="create-game.html" class="text-white hover:text-blue-200 transition font-semibold">
+                    <i class="fas fa-plus-circle mr-1"></i>Create
+                </a>
+                <a href="pay-coins.html" class="text-white hover:text-blue-200 transition">
+                    <i class="fas fa-coins mr-1"></i>Coins
+                </a>
+                <a href="login.html" class="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded-full text-sm transition">
+                    <i class="fas fa-sign-in-alt mr-1"></i>Login
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold text-gray-800">
+                <i class="fas fa-tools text-indigo-600 mr-2"></i>Create Your Game
+            </h2>
+            <div class="flex space-x-2">
+                <button class="bg-white hover:bg-gray-50 text-gray-700 px-3 py-1 rounded-lg border border-gray-300 shadow-sm transition">
+                    <i class="fas fa-undo mr-1"></i>Undo
+                </button>
+                <button class="bg-white hover:bg-gray-50 text-gray-700 px-3 py-1 rounded-lg border border-gray-300 shadow-sm transition">
+                    <i class="fas fa-redo mr-1"></i>Redo
+                </button>
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded-lg shadow-sm transition">
+                    <i class="fas fa-save mr-1"></i>Save
+                </button>
+            </div>
+        </div>
+        
+        <!-- Game Templates -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-th-large text-blue-600 mr-2"></i>Game Templates
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="template-card bg-gradient-to-br from-blue-50 to-indigo-50 border border-gray-200 rounded-xl p-6 text-center cursor-pointer">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-rocket text-blue-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-800">Space Shooter</h4>
+                    <p class="text-gray-600 mb-4">Classic arcade-style game</p>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:opacity-90 text-white py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md">
+                        <i class="fas fa-plus mr-2"></i>Use Template
+                    </button>
+                </div>
+                
+                <div class="template-card bg-gradient-to-br from-green-50 to-emerald-50 border border-gray-200 rounded-xl p-6 text-center cursor-pointer">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-puzzle-piece text-green-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-800">Puzzle Adventure</h4>
+                    <p class="text-gray-600 mb-4">Brain teasing puzzles</p>
+                    <button class="w-full bg-gradient-to-r from-green-600 to-emerald-700 hover:opacity-90 text-white py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-green-500 shadow-md">
+                        <i class="fas fa-plus mr-2"></i>Use Template
+                    </button>
+                </div>
+                
+                <div class="template-card bg-gradient-to-br from-purple-50 to-pink-50 border border-gray-200 rounded-xl p-6 text-center cursor-pointer">
+                    <div class="bg-purple-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-dragon text-purple-600 text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-800">RPG World</h4>
+                    <p class="text-gray-600 mb-4">Role-playing adventure</p>
+                    <button class="w-full bg-gradient-to-r from-purple-600 to-pink-700 hover:opacity-90 text-white py-2 rounded-lg transition duration-300 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md">
+                        <i class="fas fa-plus mr-2"></i>Use Template
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Game Creator -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-pencil-ruler text-indigo-600 mr-2"></i>Game Designer
+            </h3>
+            
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Toolbox -->
+                <div class="lg:w-1/4">
+                    <div class="bg-gray-50 rounded-lg border border-gray-200 p-4">
+                        <h4 class="font-semibold text-gray-800 mb-3">
+                            <i class="fas fa-toolbox text-indigo-600 mr-2"></i>Toolbox
+                        </h4>
+                        <p class="text-sm text-gray-600 mb-4">Drag and drop items to create your game!</p>
+                        
+                        <div class="space-y-3">
+                            <div class="tool-item flex items-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                <div class="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center text-white mr-3">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <span class="text-gray-700">Block</span>
+                            </div>
+                            
+                            <div class="tool-item flex items-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                <div class="w-8 h-8 bg-red-500 rounded-md flex items-center justify-center text-white mr-3">
+                                    <i class="fas fa-ghost"></i>
+                                </div>
+                                <span class="text-gray-700">Enemy</span>
+                            </div>
+                            
+                            <div class="tool-item flex items-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-md flex items-center justify-center text-white mr-3">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-700">Power-up</span>
+                            </div>
+                            
+                            <div class="tool-item flex items-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                <div class="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center text-white mr-3">
+                                    <i class="fas fa-bomb"></i>
+                                </div>
+                                <span class="text-gray-700">Obstacle</span>
+                            </div>
+                            
+                            <div class="tool-item flex items-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                <div class="w-8 h-8 bg-green-500 rounded-md flex items-center justify-center text-white mr-3">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <span class="text-gray-700">Goal</span>
+                            </div>
+                            
+                            <div class="tool-item flex items-center p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                <div class="w-8 h-8 bg-indigo-500 rounded-md flex items-center justify-center text-white mr-3">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="text-gray-700">Player</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-800 mb-3">
+                                <i class="fas fa-sliders-h text-indigo-600 mr-2"></i>Properties
+                            </h4>
+                            <div class="bg-white rounded-lg border border-gray-200 p-3">
+                                <p class="text-sm text-gray-500 mb-2">Select an item to edit its properties</p>
+                                <div class="opacity-50">
+                                    <div class="mb-2">
+                                        <label class="block text-xs text-gray-600 mb-1">Name</label>
+                                        <input type="text" disabled class="w-full px-2 py-1 rounded border border-gray-300 bg-gray-50">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="block text-xs text-gray-600 mb-1">Position</label>
+                                        <div class="flex space-x-2">
+                                            <input type="text" disabled placeholder="X" class="w-full px-2 py-1 rounded border border-gray-300 bg-gray-50">
+                                            <input type="text" disabled placeholder="Y" class="w-full px-2 py-1 rounded border border-gray-300 bg-gray-50">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs text-gray-600 mb-1">Behavior</label>
+                                        <select disabled class="w-full px-2 py-1 rounded border border-gray-300 bg-gray-50">
+                                            <option>Static</option>
+                                            <option>Moving</option>
+                                            <option>Interactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Design Area -->
+                <div class="lg:w-3/4">
+                    <div class="bg-white rounded-lg border border-gray-200 h-96 design-area relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-gray-400">
+                                <i class="fas fa-hand-pointer text-4xl mb-2"></i>
+                                <p>Drag items from the toolbox to start designing your game</p>
+                                <p class="text-sm mt-2">Click on placed items to edit their properties</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 flex justify-between">
+                        <div class="flex space-x-2">
+                            <button class="bg-white hover:bg-gray-50 text-gray-700 px-3 py-1 rounded-lg border border-gray-300 shadow-sm transition">
+                                <i class="fas fa-trash-alt mr-1"></i>Clear
+                            </button>
+                            <button class="bg-white hover:bg-gray-50 text-gray-700 px-3 py-1 rounded-lg border border-gray-300 shadow-sm transition">
+                                <i class="fas fa-eye mr-1"></i>Preview
+                            </button>
+                        </div>
+                        
+                        <div class="flex space-x-2">
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-sm transition">
+                                <i class="fas fa-save mr-1"></i>Save Game
+                            </button>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow-sm transition">
+                                <i class="fas fa-paper-plane mr-1"></i>Publish Game
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Game Settings -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mt-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-cog text-indigo-600 mr-2"></i>Game Settings
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Game Title</label>
+                        <input type="text" placeholder="Enter your game title" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Game Description</label>
+                        <textarea placeholder="Describe your game..." rows="3" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Game Genre</label>
+                        <select class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option>Action</option>
+                            <option>Adventure</option>
+                            <option>Puzzle</option>
+                            <option>RPG</option>
+                            <option>Strategy</option>
+                            <option>Simulation</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Difficulty Level</label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="difficulty" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                                <span class="ml-2 text-gray-700">Easy</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="difficulty" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" checked>
+                                <span class="ml-2 text-gray-700">Medium</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="difficulty" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                                <span class="ml-2 text-gray-700">Hard</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-medium mb-2">Max Players</label>
+                        <input type="number" min="1" max="10" value="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Game Visibility</label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="visibility" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" checked>
+                                <span class="ml-2 text-gray-700">Public</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="visibility" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                                <span class="ml-2 text-gray-700">Private</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="visibility" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300">
+                                <span class="ml-2 text-gray-700">Friends Only</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 text-center mt-8">
+        <div class="container mx-auto">
+            <div class="flex justify-center space-x-4 mb-2">
+                <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white hover:text-blue-200"><i class="fab fa-discord"></i></a>
+            </div>
+            <p>&copy; 2023 Yaxile Studio. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/create-game.js"></script>
+</body>
+</html>
